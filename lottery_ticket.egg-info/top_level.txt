@@ -1,1 +1,1 @@
-lottery-ticket
+lottery_ticket
