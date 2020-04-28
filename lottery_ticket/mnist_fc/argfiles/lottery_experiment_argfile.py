@@ -18,6 +18,10 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+
+import sys
+sys.path.append('../..')
+
 from absl import app
 from lottery_ticket.mnist_fc import constants
 
@@ -25,6 +29,7 @@ from lottery_ticket.mnist_fc import constants
 def main(argv):
   del argv  # Unused.
   line_format = '--output_dir={output_dir}'
+  print(line_format)
 
   for trial in range(1, 21):
     print(line_format.format(output_dir=constants.trial(trial)))

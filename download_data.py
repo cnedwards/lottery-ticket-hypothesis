@@ -20,6 +20,7 @@ from __future__ import print_function
 
 import fire
 from tensorflow.keras.datasets import mnist
+from tensorflow.keras.datasets import fashion_mnist
 from lottery_ticket.foundations import save_restore
 from lottery_ticket.mnist_fc import locations
 
@@ -28,6 +29,11 @@ def download(location=locations.MNIST_LOCATION):
   d = {}
   (d['x_train'], d['y_train']), (d['x_test'], d['y_test']) = mnist.load_data()
   save_restore.save_network(location, d)
+  
+  #Now fashion MNIST
+  d = {}
+  (d['x_train'], d['y_train']), (d['x_test'], d['y_test']) = fashion_mnist.load_data()
+  save_restore.save_network(locations.FASHIONMNIST_LOCATION, d)
 
 
 def main():
