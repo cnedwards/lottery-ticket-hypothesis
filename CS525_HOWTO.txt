@@ -1,0 +1,3 @@
+
+First, run 
+python argfile_runner.py runners/lottery_experiment.py argfiles/lottery_experiment_argfile.py

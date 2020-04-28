@@ -21,15 +21,20 @@ from __future__ import print_function
 import subprocess
 import fire
 
+import sys
+sys.path.append('./lottery_ticket/mnist_fc')
 
 def run(runner, argfile):
   flags = subprocess.check_output(['python', argfile])
-  for flag in flags.split('\n'):
+  print(flags)
+  for flag in flags.decode().split('\n'):
+    print(flag)
     subprocess.call(['python', runner, flag])
 
 
-def main(unused_argv):
-  fire.Fire(run)
+#def main(unused_argv):
+#  fire.Fire(run)
 
 if __name__ == '__main__':
-  main()
+  #main()
+  fire.Fire(run)
